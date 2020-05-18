@@ -84,6 +84,14 @@ public class MenuButtonsController : MonoBehaviour, IPointerEnterHandler, IPoint
 
     public void OnCreditsSceneBackButtonClick()
     {
+        int creditsSceneBuildIndex = SceneManager.GetActiveScene().buildIndex;
+        string path = SceneUtility.GetScenePathByBuildIndex(creditsSceneBuildIndex - 1);
+        int slash = path.LastIndexOf('/');
+        string name = path.Substring(slash + 1);
+        int dot = name.LastIndexOf('.');
+        string lastLevel =  name.Substring(0, dot);
+
+        PlayerPrefs.SetString("Current Level", lastLevel);
         SceneManager.LoadScene("Main Menu");
     }
 }
