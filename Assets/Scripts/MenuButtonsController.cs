@@ -81,4 +81,9 @@ public class MenuButtonsController : MonoBehaviour, IPointerEnterHandler, IPoint
         SceneManager.LoadScene("Main Menu");
         Time.timeScale = 1;
     }
+
+    public void OnCreditsSceneBackButtonClick()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
 }
