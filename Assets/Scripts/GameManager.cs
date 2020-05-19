@@ -2,6 +2,7 @@
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -92,8 +93,11 @@ public class GameManager : MonoBehaviour
         levelCompletedUI.SetActive(true);
     }
 
-    public void CollectDiamond()
+    public void CollectDiamond(GameObject player)
     {
+        AudioSource collectDiamondSound = player.GetComponent<AudioSource>();
+        collectDiamondSound.Play();
+
         int currentDiamonds = Convert.ToInt32(collectedDiamondsUI.text);
         currentDiamonds ++;
         collectedDiamondsUI.text = currentDiamonds.ToString();

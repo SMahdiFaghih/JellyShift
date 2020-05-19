@@ -22,7 +22,7 @@ public class PlayerCollision : MonoBehaviour
         }
         else if (collisionInfo.collider.transform.tag == "Diamond")
         {
-            gameManager.CollectDiamond();
+            gameManager.CollectDiamond(gameObject);
             Destroy(collisionInfo.collider.gameObject);
         }
         else if (collisionInfo.collider.tag == "Ground")
