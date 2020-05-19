@@ -40,7 +40,7 @@ public class PlayerCollision : MonoBehaviour
         }
         else if (collider.tag == "LevelComplete")
         {
-            gameManager.LevelComplete();
+            gameManager.LevelComplete(collider.gameObject);
         }
         else if (collider.tag == "TurnLeft")
         {

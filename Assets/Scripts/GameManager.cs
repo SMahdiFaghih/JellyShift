@@ -86,8 +86,11 @@ public class GameManager : MonoBehaviour
         playerController.rb.isKinematic = false;
     }
 
-    public void LevelComplete()
+    public void LevelComplete(GameObject levelCompleted)
     {
+        AudioSource levelCompletedSound = levelCompleted.GetComponent<AudioSource>();
+        levelCompletedSound.Play();
+
         playerController.enabled = false;
         PlayerPrefs.SetString("Collected Diamonds", collectedDiamondsUI.text);
         levelCompletedUI.SetActive(true);
