@@ -13,14 +13,14 @@ public class FillLoadingBar : MonoBehaviour
     {
         print("Loading");
         loadingBar.fillAmount = 0;
-        StartCoroutine("Fill");   
+        StartCoroutine("Fill");
     }
 
     IEnumerator Fill()
     {
         while(loadingBar.fillAmount < 1)
         {
-            loadingBar.fillAmount += Time.deltaTime * 0.5f;
+            loadingBar.fillAmount += Time.deltaTime * 0.3f;
             loadingPercentage.text = Math.Ceiling(loadingBar.fillAmount * 100) + "%";
             yield return null;
         }
