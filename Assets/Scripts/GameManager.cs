@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour
 
     public void CollectDiamond(GameObject player)
     {
-        AudioSource collectDiamondSound = player.GetComponent<AudioSource>();
+        AudioSource collectDiamondSound = player.GetComponents<AudioSource>()[0];
         collectDiamondSound.Play();
 
         int currentDiamonds = Convert.ToInt32(collectedDiamondsUI.text);

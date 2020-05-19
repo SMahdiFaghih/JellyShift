@@ -28,6 +28,9 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(transform.up * jumpForce * Time.deltaTime);
             isJumping = true;
+
+            AudioSource jumpSound = GetComponents<AudioSource>()[1];
+            jumpSound.Play();
         }
     }
 
